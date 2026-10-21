@@ -676,33 +676,15 @@ E 应评估经过开发/验证阶段选定的候选，不能在盲测中反复�
 回退和失败任务的支出不能排除。分别报告试点规模与预期业务量下的成本；低流量时，自部署固定费用可能抵消推理节省。
 
 
-建议最终用一张结果表呈现，实测前统一标记“待测”：
+为便于比较，按 A–E 对照组分别报告分类质量及区间、关键类别召回、自动接受覆盖率与接受部分错误率。
+
+\pagebreak
+完整链路同时报告每成功任务生成式调用次数（含回退）、回答模型输入 token 均值与 p95、完整链路 p95、每成功任务总成本、回退率与回退费用。微调条件不具备时标记“不适用”；尚未完成实测的指标标记“待测”。
 
 
-{\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.28}
-\begin{longtable}{>{\raggedright\arraybackslash}p{0.280\dimexpr\linewidth-12\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.144\dimexpr\linewidth-12\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.144\dimexpr\linewidth-12\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.144\dimexpr\linewidth-12\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.144\dimexpr\linewidth-12\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.144\dimexpr\linewidth-12\tabcolsep\relax}}
-\caption{方案对照结果记录表（待测）}\label{tab:results-template}\\
-\toprule
-\textbf{指标} & \textbf{当前大模型} & \textbf{原始决策模型} & \textbf{提示优化版} & \textbf{微调版（可选）} & \textbf{最终策略} \\
-\midrule
-\endfirsthead
-\toprule
-\textbf{指标} & \textbf{当前大模型} & \textbf{原始决策模型} & \textbf{提示优化版} & \textbf{微调版（可选）} & \textbf{最终策略} \\
-\midrule
-\endhead
-\midrule\multicolumn{6}{r}{\scriptsize\color{Muted}续下页}\\\endfoot
-\bottomrule\endlastfoot
-分类质量与区间 & 待测 & 待测 & 待测 & 待测 & 待测 \\
-关键类别召回 & 待测 & 待测 & 待测 & 待测 & 待测 \\
-自动接受覆盖率 / 错误率 & 按现有策略记录 & 待测 & 待测 & 待测 & 待测 \\
-每任务生成式调用次数（含回退） & 待测 & 待测 & 待测 & 待测 & 待测 \\
-回答模型每次调用输入 token（均值 / p95） & 待测 & 待测 & 待测 & 待测 & 待测 \\
-完整链路 p95 & 待测 & 待测 & 待测 & 待测 & 待测 \\
-每成功任务总成本 & 待测 & 待测 & 待测 & 待测 & 待测 \\
-回退率与费用 & 按现有策略记录 & 待测 & 待测 & 待测 & 待测 \\
-\end{longtable}}
 
-业务质量的允许退化范围、关键类别召回下限、覆盖率要求及 SLA 在看候选结果前确定。\textbf{先满足质量约束，再比较成本和时延。} 降本提速比例以实测为准，样本不足时仅报告试验观察，不宣称已证明生产收益。
+
+各项质量门槛、关键类别召回下限、覆盖率要求及 SLA 应在查看候选结果前确定。\textbf{先满足质量约束，再比较成本和时延。} 降本提速比例以实测为准；样本不足时仅报告观察结果，不宣称已证明生产收益。
 
 
 \section{预期价值与适用边界}

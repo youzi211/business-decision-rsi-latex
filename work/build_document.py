@@ -199,13 +199,13 @@ TABLE_CAPTIONS=[
     '示例业务链路优化前后对照','项目预期成效与验收关注点',
     '系统组件与职责分工','典型错误现象与优先处理方式',
     '决策模型优化对照组设置','离线评测指标及其用途',
-    '完整业务链路场景与下游验证','方案对照结果记录表（待测）'
+    '完整业务链路场景与下游验证'
 ]
 table_number=0
 def table(rows):
     global table_number
-    # Keep the second source table out of the rendered document.
-    if table_number == 1:
+    # Omit the source label-boundary table and the final results-template table.
+    if table_number in (1, 13):
         table_number += 1
         return ''
     caption=TABLE_CAPTIONS[table_number]
