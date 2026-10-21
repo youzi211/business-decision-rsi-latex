@@ -35,7 +35,7 @@ PRE=r'''\documentclass[UTF8,a4paper,11pt,fontset=windows]{ctexart}
 \pagestyle{fancy}\fancyhf{}
 \fancyhead[L]{\small\color{Muted}业务决策节点轻量化}
 \fancyhead[R]{\small\color{Muted}双闭环 RSI 自优化方案}
-\fancyfoot[L]{\scriptsize\color{Muted}参赛申请优化版 · 技术方案}
+\fancyfoot[L]{\scriptsize\color{Muted}参赛申请 · 技术方案}
 \fancyfoot[R]{\small\color{Navy}\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\footrulewidth}{0pt}
@@ -49,7 +49,7 @@ PRE=r'''\documentclass[UTF8,a4paper,11pt,fontset=windows]{ctexart}
 \begin{tikzpicture}[remember picture,overlay]
 \fill[Navy] (current page.north west) rectangle ([yshift=-62mm]current page.north east);
 \fill[Teal] ([yshift=-62mm]current page.north west) rectangle ([yshift=-65mm]current page.north east);
-\node[anchor=north west,text=white,font=\small] at ([xshift=22mm,yshift=-21mm]current page.north west) {技术方案 / 参赛申请优化版};
+\node[anchor=north west,text=white,font=\small] at ([xshift=22mm,yshift=-21mm]current page.north west) {技术方案 / 参赛申请};
 \node[anchor=north west,text=white,font=\fontsize{27}{36}\selectfont\bfseries,align=left] at ([xshift=22mm,yshift=-34mm]current page.north west) {让业务判断更轻，让优化持续发生};
 \end{tikzpicture}\par
 \vspace*{58mm}
@@ -70,7 +70,7 @@ PRE=r'''\documentclass[UTF8,a4paper,11pt,fontset=windows]{ctexart}
 保留必要的内容生成，将边界清晰的判断任务交给合适的决策后端；通过真实错误驱动的两条离线闭环，形成可评测、可追溯、可回退的持续优化机制。
 \end{insight}
 \vfill
-{\small\color{Muted}文档状态：方案设计与验证规划，尚未提供实测成果。\\[3pt]编排说明：依据所提供原稿整理、适度润色并重绘流程图。}
+{\small\color{Muted}评测说明：方案收益以真实业务场景的实测数据和验收结果为准。}
 \end{titlepage}
 \pagenumbering{roman}
 \section*{方案速览}
