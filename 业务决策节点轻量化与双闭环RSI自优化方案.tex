@@ -1,6 +1,6 @@
 \documentclass[UTF8,a4paper,11pt,fontset=windows]{ctexart}
 \usepackage[margin=21mm,top=22mm,bottom=22mm,headheight=15pt]{geometry}
-\usepackage[table]{xcolor}
+\usepackage{xcolor}
 \usepackage{fontspec,graphicx,amsmath,booktabs,array,longtable,enumitem,fancyhdr,tikz,tcolorbox,hyperref}
 \usetikzlibrary{arrows.meta,positioning,fit,backgrounds,calc}
 \definecolor{Navy}{HTML}{17324D}
@@ -103,13 +103,12 @@ RSI 沿用项目原名，本文以两条受约束的离线优化闭环阐述其�
 
 {\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.28}
 \begin{longtable}{>{\raggedright\arraybackslash}p{0.220\dimexpr\linewidth-6\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.380\dimexpr\linewidth-6\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.400\dimexpr\linewidth-6\tabcolsep\relax}}
+\caption{用户意图识别示例及下游处理}\label{tab:intent-examples}\\
 \toprule
-\rowcolor{Pale}
 \textbf{用户表达示例} & \textbf{期望识别结果} & \textbf{后续处理} \\
 \midrule
 \endfirsthead
 \toprule
-\rowcolor{Pale}
 \textbf{用户表达示例} & \textbf{期望识别结果} & \textbf{后续处理} \\
 \midrule
 \endhead
@@ -134,13 +133,12 @@ RSI 沿用项目原名，本文以两条受约束的离线优化闭环阐述其�
 
 {\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.28}
 \begin{longtable}{>{\raggedright\arraybackslash}p{0.220\dimexpr\linewidth-6\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.380\dimexpr\linewidth-6\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.400\dimexpr\linewidth-6\tabcolsep\relax}}
+\caption{意图分类标签及易混淆边界}\label{tab:intent-labels}\\
 \toprule
-\rowcolor{Pale}
 \textbf{类别} & \textbf{固定业务定义} & \textbf{易混淆边界} \\
 \midrule
 \endfirsthead
 \toprule
-\rowcolor{Pale}
 \textbf{类别} & \textbf{固定业务定义} & \textbf{易混淆边界} \\
 \midrule
 \endhead
@@ -188,13 +186,12 @@ needs\_clarification & 缺少必要指代或上下文，无法可靠分类 & 不
 
 {\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.28}
 \begin{longtable}{>{\raggedright\arraybackslash}p{0.220\dimexpr\linewidth-6\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.380\dimexpr\linewidth-6\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.400\dimexpr\linewidth-6\tabcolsep\relax}}
+\caption{意图识别流程优化前后对照}\label{tab:intent-flow}\\
 \toprule
-\rowcolor{Pale}
 \textbf{环节} & \textbf{原本流程} & \textbf{用本方案后（预期）} \\
 \midrule
 \endfirsthead
 \toprule
-\rowcolor{Pale}
 \textbf{环节} & \textbf{原本流程} & \textbf{用本方案后（预期）} \\
 \midrule
 \endhead
@@ -229,13 +226,12 @@ needs\_clarification & 缺少必要指代或上下文，无法可靠分类 & 不
 
 {\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.28}
 \begin{longtable}{>{\raggedright\arraybackslash}p{0.220\dimexpr\linewidth-6\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.380\dimexpr\linewidth-6\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.400\dimexpr\linewidth-6\tabcolsep\relax}}
+\caption{问题改写场景优化前后对照}\label{tab:rewrite-flow}\\
 \toprule
-\rowcolor{Pale}
 \textbf{环节} & \textbf{原本流程} & \textbf{用本方案后（预期）} \\
 \midrule
 \endfirsthead
 \toprule
-\rowcolor{Pale}
 \textbf{环节} & \textbf{原本流程} & \textbf{用本方案后（预期）} \\
 \midrule
 \endhead
@@ -269,13 +265,12 @@ needs\_clarification & 缺少必要指代或上下文，无法可靠分类 & 不
 
 {\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.28}
 \begin{longtable}{>{\raggedright\arraybackslash}p{0.220\dimexpr\linewidth-6\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.380\dimexpr\linewidth-6\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.400\dimexpr\linewidth-6\tabcolsep\relax}}
+\caption{检索片段筛选场景优化前后对照}\label{tab:retrieval-flow}\\
 \toprule
-\rowcolor{Pale}
 \textbf{环节} & \textbf{原本流程} & \textbf{用本方案后（预期）} \\
 \midrule
 \endfirsthead
 \toprule
-\rowcolor{Pale}
 \textbf{环节} & \textbf{原本流程} & \textbf{用本方案后（预期）} \\
 \midrule
 \endhead
@@ -307,13 +302,12 @@ needs\_clarification & 缺少必要指代或上下文，无法可靠分类 & 不
 
 {\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.28}
 \begin{longtable}{>{\raggedright\arraybackslash}p{0.150\dimexpr\linewidth-8\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.240\dimexpr\linewidth-8\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.290\dimexpr\linewidth-8\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.320\dimexpr\linewidth-8\tabcolsep\relax}}
+\caption{三条降本提速路径及生效条件}\label{tab:saving-paths}\\
 \toprule
-\rowcolor{Pale}
 \textbf{优化路径} & \textbf{原有资源消耗} & \textbf{本方案如何减少消耗} & \textbf{提速来源与生效条件} \\
 \midrule
 \endfirsthead
 \toprule
-\rowcolor{Pale}
 \textbf{优化路径} & \textbf{原有资源消耗} & \textbf{本方案如何减少消耗} & \textbf{提速来源与生效条件} \\
 \midrule
 \endhead
@@ -337,13 +331,12 @@ needs\_clarification & 缺少必要指代或上下文，无法可靠分类 & 不
 
 {\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.28}
 \begin{longtable}{>{\raggedright\arraybackslash}p{0.220\dimexpr\linewidth-6\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.380\dimexpr\linewidth-6\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.400\dimexpr\linewidth-6\tabcolsep\relax}}
+\caption{示例业务链路优化前后对照}\label{tab:request-example}\\
 \toprule
-\rowcolor{Pale}
 \textbf{环节} & \textbf{使用前：示例基线} & \textbf{使用后：预期路径} \\
 \midrule
 \endfirsthead
 \toprule
-\rowcolor{Pale}
 \textbf{环节} & \textbf{使用前：示例基线} & \textbf{使用后：预期路径} \\
 \midrule
 \endhead
@@ -385,13 +378,12 @@ needs\_clarification & 缺少必要指代或上下文，无法可靠分类 & 不
 
 {\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.28}
 \begin{longtable}{>{\raggedright\arraybackslash}p{0.150\dimexpr\linewidth-8\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.240\dimexpr\linewidth-8\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.290\dimexpr\linewidth-8\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.320\dimexpr\linewidth-8\tabcolsep\relax}}
+\caption{项目预期成效与验收关注点}\label{tab:expected-outcomes}\\
 \toprule
-\rowcolor{Pale}
 \textbf{维度} & \textbf{使用前需记录的基线} & \textbf{使用后预期成效} & \textbf{验收关注点} \\
 \midrule
 \endfirsthead
 \toprule
-\rowcolor{Pale}
 \textbf{维度} & \textbf{使用前需记录的基线} & \textbf{使用后预期成效} & \textbf{验收关注点} \\
 \midrule
 \endhead
@@ -439,13 +431,12 @@ needs\_clarification & 缺少必要指代或上下文，无法可靠分类 & 不
 
 {\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.28}
 \begin{longtable}{>{\raggedright\arraybackslash}p{0.420\dimexpr\linewidth-4\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.580\dimexpr\linewidth-4\tabcolsep\relax}}
+\caption{系统组件与职责分工}\label{tab:system-components}\\
 \toprule
-\rowcolor{Pale}
 \textbf{组件} & \textbf{主要职责} \\
 \midrule
 \endfirsthead
 \toprule
-\rowcolor{Pale}
 \textbf{组件} & \textbf{主要职责} \\
 \midrule
 \endhead
@@ -520,13 +511,12 @@ needs\_clarification & 缺少必要指代或上下文，无法可靠分类 & 不
 
 {\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.28}
 \begin{longtable}{>{\raggedright\arraybackslash}p{0.420\dimexpr\linewidth-4\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.580\dimexpr\linewidth-4\tabcolsep\relax}}
+\caption{典型错误现象与优先处理方式}\label{tab:error-diagnosis}\\
 \toprule
-\rowcolor{Pale}
 \textbf{错误现象} & \textbf{优先处理} \\
 \midrule
 \endfirsthead
 \toprule
-\rowcolor{Pale}
 \textbf{错误现象} & \textbf{优先处理} \\
 \midrule
 \endhead
@@ -607,13 +597,12 @@ needs\_clarification & 缺少必要指代或上下文，无法可靠分类 & 不
 
 {\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.28}
 \begin{longtable}{>{\raggedright\arraybackslash}p{0.220\dimexpr\linewidth-6\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.380\dimexpr\linewidth-6\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.400\dimexpr\linewidth-6\tabcolsep\relax}}
+\caption{决策模型优化对照组设置}\label{tab:evaluation-groups}\\
 \toprule
-\rowcolor{Pale}
 \textbf{对照组} & \textbf{方案} & \textbf{主要验证内容} \\
 \midrule
 \endfirsthead
 \toprule
-\rowcolor{Pale}
 \textbf{对照组} & \textbf{方案} & \textbf{主要验证内容} \\
 \midrule
 \endhead
@@ -650,13 +639,12 @@ E 应评估经过开发/验证阶段选定的候选，不能在盲测中反复�
 
 {\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.28}
 \begin{longtable}{>{\raggedright\arraybackslash}p{0.220\dimexpr\linewidth-6\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.380\dimexpr\linewidth-6\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.400\dimexpr\linewidth-6\tabcolsep\relax}}
+\caption{离线评测指标及其用途}\label{tab:offline-metrics}\\
 \toprule
-\rowcolor{Pale}
 \textbf{维度} & \textbf{核心指标} & \textbf{目的} \\
 \midrule
 \endfirsthead
 \toprule
-\rowcolor{Pale}
 \textbf{维度} & \textbf{核心指标} & \textbf{目的} \\
 \midrule
 \endhead
@@ -681,13 +669,12 @@ E 应评估经过开发/验证阶段选定的候选，不能在盲测中反复�
 
 {\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.28}
 \begin{longtable}{>{\raggedright\arraybackslash}p{0.420\dimexpr\linewidth-4\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.580\dimexpr\linewidth-4\tabcolsep\relax}}
+\caption{完整业务链路场景与下游验证}\label{tab:chain-validation}\\
 \toprule
-\rowcolor{Pale}
 \textbf{场景} & \textbf{下游验证方式} \\
 \midrule
 \endfirsthead
 \toprule
-\rowcolor{Pale}
 \textbf{场景} & \textbf{下游验证方式} \\
 \midrule
 \endhead
@@ -716,13 +703,12 @@ E 应评估经过开发/验证阶段选定的候选，不能在盲测中反复�
 
 {\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.28}
 \begin{longtable}{>{\raggedright\arraybackslash}p{0.280\dimexpr\linewidth-12\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.144\dimexpr\linewidth-12\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.144\dimexpr\linewidth-12\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.144\dimexpr\linewidth-12\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.144\dimexpr\linewidth-12\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.144\dimexpr\linewidth-12\tabcolsep\relax}}
+\caption{方案对照结果记录表（待测）}\label{tab:results-template}\\
 \toprule
-\rowcolor{Pale}
 \textbf{指标} & \textbf{当前大模型} & \textbf{原始决策模型} & \textbf{提示优化版} & \textbf{微调版（可选）} & \textbf{最终策略} \\
 \midrule
 \endfirsthead
 \toprule
-\rowcolor{Pale}
 \textbf{指标} & \textbf{当前大模型} & \textbf{原始决策模型} & \textbf{提示优化版} & \textbf{微调版（可选）} & \textbf{最终策略} \\
 \midrule
 \endhead

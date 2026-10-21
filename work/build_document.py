@@ -15,7 +15,7 @@ source=source.replace('提示词 RSI 自动迭代类别描述，经评测后发�
 
 PRE=r'''\documentclass[UTF8,a4paper,11pt,fontset=windows]{ctexart}
 \usepackage[margin=21mm,top=22mm,bottom=22mm,headheight=15pt]{geometry}
-\usepackage[table]{xcolor}
+\usepackage{xcolor}
 \usepackage{fontspec,graphicx,amsmath,booktabs,array,longtable,enumitem,fancyhdr,tikz,tcolorbox,hyperref}
 \usetikzlibrary{arrows.meta,positioning,fit,backgrounds,calc}
 \definecolor{Navy}{HTML}{17324D}
@@ -192,9 +192,19 @@ def inline(s):
         else: result+=esc(p)
     return result
 
+TABLE_CAPTIONS=[
+    '用户意图识别示例及下游处理','意图分类标签及易混淆边界',
+    '意图识别流程优化前后对照','问题改写场景优化前后对照',
+    '检索片段筛选场景优化前后对照','三条降本提速路径及生效条件',
+    '示例业务链路优化前后对照','项目预期成效与验收关注点',
+    '系统组件与职责分工','典型错误现象与优先处理方式',
+    '决策模型优化对照组设置','离线评测指标及其用途',
+    '完整业务链路场景与下游验证','方案对照结果记录表（待测）'
+]
 table_number=0
 def table(rows):
     global table_number
+    caption=TABLE_CAPTIONS[table_number]
     table_number+=1
     cells=[[c.strip() for c in x.strip().strip('|').split('|')] for x in rows]
     cells=[c for c in cells if not all(re.fullmatch(r':?-+:?',v) for v in c)]
@@ -206,7 +216,7 @@ def table(rows):
     # widths sum to linewidth after cell padding; use compact but readable table type.
     spec=''.join('>{\\raggedright\\arraybackslash}p{'+f'{r:.3f}\\dimexpr\\linewidth-{2*n}\\tabcolsep\\relax'+'}' for r in ratios)
     header=' & '.join(r'\textbf{'+inline(c)+'}' for c in cells[0])+r' \\'
-    body=[r'{\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.28}',r'\begin{longtable}{'+spec+'}',r'\toprule',r'\rowcolor{Pale}',header,r'\midrule',r'\endfirsthead',r'\toprule',r'\rowcolor{Pale}',header,r'\midrule',r'\endhead',r'\midrule\multicolumn{'+str(n)+r'}{r}{\scriptsize\color{Muted}续下页}\\\endfoot',r'\bottomrule\endlastfoot']
+    body=[r'{\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.28}',r'\begin{longtable}{'+spec+'}',r'\caption{'+caption+'}\label{tab:table-'+str(table_number)+r'}\\',r'\toprule',header,r'\midrule',r'\endfirsthead',r'\toprule',header,r'\midrule',r'\endhead',r'\midrule\multicolumn{'+str(n)+r'}{r}{\scriptsize\color{Muted}续下页}\\\endfoot',r'\bottomrule\endlastfoot']
     for row in cells[1:]: body+=[' & '.join(inline(c) for c in row)+r' \\']
     body += [r'\end{longtable}}']
     return '\n'.join(body)
