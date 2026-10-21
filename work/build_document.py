@@ -15,7 +15,8 @@ source=source.replace('提示词 RSI 自动迭代类别描述，经评测后发�
 
 PRE=r'''\documentclass[UTF8,a4paper,11pt,fontset=windows]{ctexart}
 \usepackage[margin=21mm,top=22mm,bottom=22mm,headheight=15pt]{geometry}
-\usepackage{fontspec,xcolor,graphicx,amsmath,booktabs,array,longtable,enumitem,fancyhdr,tikz,tcolorbox,hyperref}
+\usepackage[table]{xcolor}
+\usepackage{fontspec,graphicx,amsmath,booktabs,array,longtable,enumitem,fancyhdr,tikz,tcolorbox,hyperref}
 \usetikzlibrary{arrows.meta,positioning,fit,backgrounds,calc}
 \definecolor{Navy}{HTML}{17324D}
 \definecolor{Teal}{HTML}{007F82}
@@ -205,7 +206,7 @@ def table(rows):
     # widths sum to linewidth after cell padding; use compact but readable table type.
     spec=''.join('>{\\raggedright\\arraybackslash}p{'+f'{r:.3f}\\dimexpr\\linewidth-{2*n}\\tabcolsep\\relax'+'}' for r in ratios)
     header=' & '.join(r'\textbf{'+inline(c)+'}' for c in cells[0])+r' \\'
-    body=[r'{\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.28}',r'\begin{longtable}{'+spec+'}',r'\toprule',header,r'\midrule',r'\endfirsthead',r'\toprule',header,r'\midrule',r'\endhead',r'\midrule\multicolumn{'+str(n)+r'}{r}{\scriptsize\color{Muted}续下页}\\\endfoot',r'\bottomrule\endlastfoot']
+    body=[r'{\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.28}',r'\begin{longtable}{'+spec+'}',r'\toprule',r'\rowcolor{Pale}',header,r'\midrule',r'\endfirsthead',r'\toprule',r'\rowcolor{Pale}',header,r'\midrule',r'\endhead',r'\midrule\multicolumn{'+str(n)+r'}{r}{\scriptsize\color{Muted}续下页}\\\endfoot',r'\bottomrule\endlastfoot']
     for row in cells[1:]: body+=[' & '.join(inline(c) for c in row)+r' \\']
     body += [r'\end{longtable}}']
     return '\n'.join(body)
