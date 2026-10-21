@@ -32,23 +32,34 @@
 \begin{titlepage}
 \thispagestyle{empty}
 \begin{tikzpicture}[remember picture,overlay]
-\fill[Navy] (current page.north west) rectangle ([yshift=-62mm]current page.north east);
-\fill[Teal] ([yshift=-62mm]current page.north west) rectangle ([yshift=-65mm]current page.north east);
-\node[anchor=north west,text=white,font=\small] at ([xshift=22mm,yshift=-21mm]current page.north west) {技术方案 / 参赛申请};
-\node[anchor=north west,text=white,font=\fontsize{27}{36}\selectfont\bfseries,align=left] at ([xshift=22mm,yshift=-34mm]current page.north west) {让业务判断更轻，让优化持续发生};
+\fill[Navy] (current page.north west) rectangle ([yshift=-36mm]current page.north east);
+\fill[Teal] ([yshift=-36mm]current page.north west) rectangle ([yshift=-38mm]current page.north east);
+\fill[white,opacity=.06] ([xshift=-58mm]current page.north east) -- ([xshift=-43mm]current page.north east) -- ([xshift=-64mm,yshift=-36mm]current page.north east) -- ([xshift=-79mm,yshift=-36mm]current page.north east) -- cycle;
+\fill[white,opacity=.06] ([xshift=-30mm]current page.north east) -- ([xshift=-15mm]current page.north east) -- ([xshift=-36mm,yshift=-36mm]current page.north east) -- ([xshift=-51mm,yshift=-36mm]current page.north east) -- cycle;
+\node[anchor=north west,text=white,font=\small] at ([xshift=22mm,yshift=-15mm]current page.north west) {技术方案 / 参赛申请};
 \end{tikzpicture}\par
-\vspace*{58mm}
-{\fontsize{25}{36}\selectfont\bfseries\color{Navy}模型治理与决策节点优化\par}
-\vspace{7mm}
-{\large\color{Muted}规范模型选用、效果评估与持续改进，在保障业务质量的同时控制处理时延与成本\par}
-\vspace{13mm}
+\vspace*{41mm}
+\begin{center}
 \begin{tikzpicture}
-\node[dark,text width=40mm,minimum height=23mm] (a) {节点轻量化\\[-1pt]\footnotesize 分类与选项打分};
-\node[accent,text width=40mm,minimum height=23mm,right=8mm of a] (b) {提示优化闭环\\[-1pt]\footnotesize 固定权重，改进描述};
-\node[box,text width=40mm,minimum height=23mm,right=8mm of b] (c) {业务微调闭环\\[-1pt]\footnotesize 冻结任务，补强能力};
-\draw[arr] (a)--(b);\draw[arr] (b)--(c);
+\node[fill=Teal!12,text=Teal,rounded corners=4mm,inner xsep=5mm,inner ysep=2mm,font=\small\bfseries] {AI基础系统组};
+\end{tikzpicture}\par
+\vspace{5mm}
+{\fontsize{30}{38}\selectfont\bfseries\color{Navy}模型治理与决策节点优化\par}
+\vspace{3mm}
+{\color{Teal}\rule{22mm}{1.2pt}\par}
+\vspace{3mm}
+{\normalsize\color{Muted}\begin{minipage}{0.92\textwidth}\centering 规范模型选用、效果评估与持续改进，在保障业务质量的同时控制处理时延与成本\end{minipage}\par}
+\end{center}
+\vspace{14mm}
+\begin{center}
+\begin{tikzpicture}
+\node[dark,text width=44mm,minimum height=27mm] (a) {节点轻量化\\[-1pt]\footnotesize 分类与选项打分};
+\node[accent,text width=44mm,minimum height=27mm,right=6mm of a] (b) {提示优化闭环\\[-1pt]\footnotesize 固定权重，改进描述};
+\node[box,text width=44mm,minimum height=27mm,right=6mm of b] (c) {业务微调闭环\\[-1pt]\footnotesize 冻结任务，补强能力};
+\draw[-{Stealth[length=2.4mm]},thick,draw=Teal] (a)--(b);\draw[-{Stealth[length=2.4mm]},thick,draw=Teal] (b)--(c);
 \end{tikzpicture}
-\vspace{11mm}
+\end{center}
+\vspace{17mm}
 \begin{insight}{方案主张}
 保留必要的内容生成，将边界清晰的判断任务交给合适的决策后端；通过真实错误驱动的两条离线闭环，形成可评测、可追溯、可回退的持续优化机制。
 \end{insight}
