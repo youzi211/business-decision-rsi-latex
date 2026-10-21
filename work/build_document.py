@@ -25,7 +25,7 @@ PRE=r'''\documentclass[UTF8,a4paper,11pt,fontset=windows]{ctexart}
 \definecolor{Muted}{HTML}{607386}
 \definecolor{Pale}{HTML}{F0F6F8}
 \definecolor{Rule}{HTML}{CDDCE4}
-\hypersetup{colorlinks=true,linkcolor=Navy,urlcolor=Teal,pdftitle={业务决策节点轻量化与双闭环 RSI 自优化方案},pdfauthor={},bookmarksnumbered=true}
+\hypersetup{colorlinks=true,linkcolor=Navy,urlcolor=Teal,pdftitle={业务决策模型治理与效能优化方案},pdfauthor={},bookmarksnumbered=true}
 \ctexset{section={format=\Large\bfseries\color{Navy},beforeskip=15pt,afterskip=10pt},subsection={format=\large\bfseries\color{Teal},beforeskip=12pt,afterskip=7pt}}
 \setlength{\parindent}{2em}
 \setlength{\parskip}{4pt}
@@ -33,8 +33,8 @@ PRE=r'''\documentclass[UTF8,a4paper,11pt,fontset=windows]{ctexart}
 \setlist{nosep,leftmargin=2em,topsep=5pt,itemsep=3pt}
 \setlength{\emergencystretch}{3em}
 \pagestyle{fancy}\fancyhf{}
-\fancyhead[L]{\small\color{Muted}业务决策节点轻量化}
-\fancyhead[R]{\small\color{Muted}双闭环 RSI 自优化方案}
+\fancyhead[L]{\small\color{Muted}业务决策模型治理}
+\fancyhead[R]{\small\color{Muted}效能优化方案}
 \fancyfoot[L]{\scriptsize\color{Muted}参赛申请 · 技术方案}
 \fancyfoot[R]{\small\color{Navy}\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
@@ -53,11 +53,11 @@ PRE=r'''\documentclass[UTF8,a4paper,11pt,fontset=windows]{ctexart}
 \node[anchor=north west,text=white,font=\fontsize{27}{36}\selectfont\bfseries,align=left] at ([xshift=22mm,yshift=-34mm]current page.north west) {让业务判断更轻，让优化持续发生};
 \end{tikzpicture}\par
 \vspace*{58mm}
-{\fontsize{25}{36}\selectfont\bfseries\color{Navy}业务决策节点轻量化\par}
+{\fontsize{25}{36}\selectfont\bfseries\color{Navy}业务决策模型治理与\par}
 \vspace{4mm}
-{\fontsize{23}{34}\selectfont\bfseries\color{Navy}与双闭环 RSI 自优化方案\par}
+{\fontsize{23}{34}\selectfont\bfseries\color{Navy}效能优化方案\par}
 \vspace{7mm}
-{\large\color{Muted}以业务质量为约束，以完整任务收益为依据\par}
+{\large\color{Muted}规范模型选用、效果评估与持续改进，在保障业务质量的同时控制处理时延与成本\par}
 \vspace{13mm}
 \begin{tikzpicture}
 \node[dark,text width=40mm,minimum height=23mm] (a) {节点轻量化\\[-1pt]\footnotesize 分类与选项打分};
