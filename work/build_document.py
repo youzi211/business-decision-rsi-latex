@@ -53,9 +53,7 @@ PRE=r'''\documentclass[UTF8,a4paper,11pt,fontset=windows]{ctexart}
 \node[anchor=north west,text=white,font=\fontsize{27}{36}\selectfont\bfseries,align=left] at ([xshift=22mm,yshift=-34mm]current page.north west) {让业务判断更轻，让优化持续发生};
 \end{tikzpicture}\par
 \vspace*{58mm}
-{\fontsize{25}{36}\selectfont\bfseries\color{Navy}业务决策模型治理与\par}
-\vspace{4mm}
-{\fontsize{23}{34}\selectfont\bfseries\color{Navy}效能优化方案\par}
+{\fontsize{25}{36}\selectfont\bfseries\color{Navy}业务决策模型治理与效能优化方案\par}
 \vspace{7mm}
 {\large\color{Muted}规范模型选用、效果评估与持续改进，在保障业务质量的同时控制处理时延与成本\par}
 \vspace{13mm}
@@ -231,6 +229,10 @@ i=0; figs=iter([FIG1,FIG2,FIG3]); current_section=0
 while i<len(lines):
     s=lines[i].strip()
     if not s or s.startswith('# '): i+=1; continue
+    if s=='**替换前后链路：**':
+        parts.append(r'\pagebreak')
+        parts.append(r'\textbf{替换前后链路：}')
+        i+=1; continue
     if s.startswith('```mermaid'):
         i+=1
         while i<len(lines) and not lines[i].startswith('```'): i+=1
