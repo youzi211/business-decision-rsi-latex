@@ -55,7 +55,7 @@
 保留必要的内容生成，将边界清晰的判断任务交给合适的决策后端；通过真实错误驱动的两条离线闭环，形成可评测、可追溯、可回退的持续优化机制。
 \end{insight}
 \vfill
-{\small\color{Muted}文档状态：方案设计与验证规划，尚未提供实测成果。\\[3pt]编排说明：依据所提供原稿整理、适度润色并重绘流程图。}
+{\small\color{Muted}文档状态：方案设计与验证规划，尚未提供实测成果。}
 \end{titlepage}
 \pagenumbering{roman}
 \section*{方案速览}
@@ -69,11 +69,7 @@
 \item[如何持续改进] 先诊断输入、标签与策略问题；描述不清时优化提示，领域能力不足且训练条件具备时再比较微调。两条闭环均在线下运行。
 \item[怎样判断有效] 先满足预先约定的质量约束，再比较完整链路时延与每成功任务总成本。新增决策、回退、运维和离线优化摊销均计入成本。
 \end{description}
-\begin{insight}{阅读与证据说明}
-正文保留原稿七章结构。流程图表示方案设计；“3 次变 1 次”“5 个片段保留 3 个”等数字仅为条件化示例，不能视为实测结果。各项验收指标在实测前统一标记“待测”。
 
-RSI 沿用项目原名，本文以两条受约束的离线优化闭环阐述其实现机制；不指线上自主训练或绕过审批更新生产配置。候选模型链接作为核查入口保留，其能力与许可未在本次编排中重新核实。
-\end{insight}
 \clearpage
 \tableofcontents
 \clearpage
@@ -131,25 +127,7 @@ RSI 沿用项目原名，本文以两条受约束的离线优化闭环阐述其�
 输出：类别 ID、各选项原始概率/分数、接受/回退状态、版本与耗时。
 
 
-{\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.28}
-\begin{longtable}{>{\raggedright\arraybackslash}p{0.220\dimexpr\linewidth-6\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.380\dimexpr\linewidth-6\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.400\dimexpr\linewidth-6\tabcolsep\relax}}
-\caption{意图分类标签及易混淆边界}\label{tab:intent-labels}\\
-\toprule
-\textbf{类别} & \textbf{固定业务定义} & \textbf{易混淆边界} \\
-\midrule
-\endfirsthead
-\toprule
-\textbf{类别} & \textbf{固定业务定义} & \textbf{易混淆边界} \\
-\midrule
-\endhead
-\midrule\multicolumn{3}{r}{\scriptsize\color{Muted}续下页}\\\endfoot
-\bottomrule\endlastfoot
-refund\_status & 已发起消费者退款后的进度或到账查询 & 不含商户交易资金结算 \\
-settlement\_status & 商户交易资金结算到指定账户的进度 & 不含消费者退款 \\
-payment\_status & 消费者订单支付状态查询 & 不等于退款进度 \\
-unknown & 信息清晰但不属于已支持类别 & 区别于信息不足 \\
-needs\_clarification & 缺少必要指代或上下文，无法可靠分类 & 不强行归入最相似类别 \\
-\end{longtable}}
+
 
 提示优化应更清晰表达这种差异，而非把任一类别扩展成"所有到账问题"来提高局部分数。
 
@@ -166,11 +144,11 @@ needs\_clarification & 缺少必要指代或上下文，无法可靠分类 & 不
 \node[box,left=5mm of ask,text width=28mm] (fb) {不可靠或异常\\原模型／既有兜底};
 \node[dark,below left=66mm and 8mm of u,text width=28mm] (r) {业务路由};
 \draw[arr] (u)-|(old);\draw[arr] (u)-|(new);
-\draw[arr] (old)|-(r);
+\draw[arr] (old.south) -- ++(-8mm,0) |- (r.west);
 \draw[arr] (new)--node[lab,right]{缺少信息}(ask);
 \draw[arr] (new.south west)--node[lab,sloped,above]{不满足}(fb.north);
 \draw[arr] (new.east)--++(9mm,0)|-node[lab,near end,above]{满足接受条件}(r.east);
-\draw[arr] (fb.south)|-(r.north);
+\draw[arr] (fb.west) -| (r.north east);
 \end{tikzpicture}}\end{center}
 \figcap{意图识别替换路径：接受、澄清与回退分别处理}
 

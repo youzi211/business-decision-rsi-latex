@@ -204,6 +204,10 @@ TABLE_CAPTIONS=[
 table_number=0
 def table(rows):
     global table_number
+    # Keep the second source table out of the rendered document.
+    if table_number == 1:
+        table_number += 1
+        return ''
     caption=TABLE_CAPTIONS[table_number]
     table_number+=1
     cells=[[c.strip() for c in x.strip().strip('|').split('|')] for x in rows]
