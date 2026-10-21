@@ -703,4 +703,30 @@ E 应评估经过开发/验证阶段选定的候选，不能在盲测中反复�
 \textbf{候选能力核查入口：} \href{https://github.com/jaredpalmer/kev}{Kev}、\href{https://github.com/NandhaKishorM/laya/blob/main/docs/finetune.md}{Laya 微调}、\href{https://huggingface.co/vllm-sr/d3-flash}{D3-Flash}。链接沿用原稿，实施前重新核实版本、训练方式和许可。
 
 
+\section{项目计划排期与阶段成果}
+
+本项目按大赛赛程推进：赛程自2026年10月9日启动，跨年后的时间均为2027年。以下围绕项目原型、效果验证和模型治理设置阶段任务与交付成果。涉及真实业务数据、模型变更及上线扩围的工作，均以业务授权和评审通过为前提。
+
+{\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.28}
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.17\dimexpr\linewidth-6\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.24\dimexpr\linewidth-6\tabcolsep\relax}>{\raggedright\arraybackslash}p{0.59\dimexpr\linewidth-6\tabcolsep\relax}}
+\caption{项目计划排期与阶段交付}\label{tab:project-schedule}\\
+\toprule
+\textbf{赛程阶段} & \textbf{时间安排} & \textbf{本项目工作与阶段交付} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{赛程阶段} & \textbf{时间安排} & \textbf{本项目工作与阶段交付} \\
+\midrule
+\endhead
+\midrule\multicolumn{3}{r}{\scriptsize\color{Muted}续下页}\\\endfoot
+\bottomrule\endlastfoot
+启动与报名 & 10月9日—25日 & 组建项目小组，明确业务、技术和评测责任；选定边界清晰且业务价值可核查的决策节点；盘点现行流程、数据权限与主要风险。交付：项目方案、场景定义、基线与数据合规清单。 \\
+预赛开发 & 10月26日—11月29日 & 构建最小可运行原型，记录输入、决策结果、模型及提示版本和执行耗时；为低置信或异常情况保留原流程回退；建立离线评测集和基线对照，初步评估质量、时延与成本。交付：演示原型、评测脚本和预赛材料。 \\
+预赛评审 & 11月30日—12月6日 & 演示原型与阶段评测，说明样本范围、评测口径和待验证事项；根据评审反馈确定复赛验证清单及风险处置安排。交付：预赛演示与答疑材料、复赛计划。 \\
+复赛开发与验证 & 12月7日—2027年1月10日 & 在获授权的脱敏数据或测试环境中打通端到端链路；分别验证提示优化闭环和微调闭环（不具备适用条件时标记为不适用）；固定独立验证集和质量门槛，评估关键类别召回、误判、覆盖率、完整链路时延及每成功任务成本；完善版本留痕、审批、灰度和回退机制。交付：可复现的对照评测报告、复赛候选版本及发布/回退方案。 \\
+复赛评审暨颁奖 & 1月11日—17日 & 完成端到端演示、现场答疑和效果说明；提交可复核的评测与治理证据，明确适用边界、回退策略和未完成事项。交付：复赛演示包、答辩材料和版本归档。 \\
+成果展示 & 1月18日—24日 & 汇总方案架构、评测方法、实测结果、治理机制和经验教训；完成脱敏后形成便于交流和复用的案例材料。交付：成果展示稿、案例说明和可复用资产清单。 \\
+赛后90天孵化 & 1月25日起 & 按业务审批推进真实数据接入与灰度试点，先影子验证，再小流量上线；持续监测业务质量、时延、总成本、回退和异常，依据预先约定的门槛决定扩围、继续优化或停止。达到验收条件后再推广至相邻节点。交付：试点复盘、验收结论和后续推广建议。 \\
+\end{longtable}}
+
 \end{document}
